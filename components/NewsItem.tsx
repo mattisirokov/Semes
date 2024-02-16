@@ -7,6 +7,7 @@ interface NewsItemProps {
   publishedAt: string;
   author: string;
   img: string;
+  description: string;
 }
 
 export default function NewsItem({
@@ -14,6 +15,7 @@ export default function NewsItem({
   publishedAt,
   author,
   img,
+  description,
 }: NewsItemProps) {
   return (
     <View style={styles.wrapper}>
@@ -21,6 +23,7 @@ export default function NewsItem({
       <Image style={styles.image} source={{ uri: img }} />
       <Text style={styles.publishedAt}>Published: {publishedAt}</Text>
       <Text style={styles.author}> {author}</Text>
+      <Text style={styles.publishedAt}> {description}</Text>
     </View>
   );
 }
@@ -53,5 +56,6 @@ const styles = StyleSheet.create({
   author: {
     fontSize: 12,
     fontWeight: "bold",
+    marginBottom: 5,
   },
 });
